@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col s6 offset-s3">
+        <div class="card">
+            <div class="col s6">
+                <h2 style="text-align: center;">Quiz Registration</h2>
+            </div>
+
+            <div class="col s6">
+                <img src="/assets/logo.png" style="height: 250px; width: 250px;" class="offset-s3">
+            </div>
+          <div class="card-content">
+              <form #registerForm="ngForm" (ngSubmit)="OnSubmit(email.value,password.value)">
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <i class="material-icons prefix">mail_outline</i>
+                          <input type="text" name="email" #email ngModel required [pattern]="emailPattern">
+                          <label>Mail Id</label>
+
+                      </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input type="text" name="password" #password ngModel required>
+                        <label>Password</label>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn-large btn-submit" type="submit" [disabled]="!registerForm.valid">Start</button>
+
+                    </div>
+
+                </div>
+
+              </form>
+
+          </div>
+
+        </div>
+
+    </div>
+
+</div>
